@@ -1,0 +1,71 @@
+survey:
+  ApplicationAccessibleOverInternet:
+    answer: Public/Internet
+    profile: NA
+  ApplicationDescription:
+    answer: billing enquiry service mission
+    profile: NA
+  ApplicationName:
+    answer: query-bill-api
+    profile: NA
+  ApplicationStage:
+    answer: New
+    profile: NA
+  ApplicationType:
+    answer: Web App
+    profile: NA
+  BAU:
+    answer: Consumer and Small Business (C&SB)
+    profile: NA
+  BusinessCritical:
+    answer: true
+    profile: ENHANCED
+  BusinessRiskConsequence:
+    answer: Major
+    profile: STANDARD
+  ConsumesOKAPIService:
+    answer: true
+    profile: NA
+  ConsumesServiceOutsideOKAPI:
+    answer: true
+    profile: NA
+  DatabaseStorage:
+    answer: NA
+    profile: NA
+  DevopsMaturityLevel:
+    answer: "3"
+    profile: NA
+  DoesPIA:
+    answer: false
+    profile: NA
+  InformationClassification:
+    answer: Restricted
+    profile: ENHANCED
+  LegacySystems:
+    answer: true
+    profile: NA
+  ProjectName:
+    answer: query-bill-ui
+    profile: NA
+  SourceClear:
+    answer: false
+    profile: NA
+  TargetPlatform:
+    answer: PCF
+    profile: NA
+  TeamGroupEmail:
+    answer: Sreedherreddy.are@team.telstra.com
+    profile: NA
+  TeamLeadEmail:
+    answer: Sreedherreddy.are@team.telstra.com
+    profile: NA
+  TeamName:
+    answer: Billing Enquiry
+    profile: NA
+  TelstraRetailOrWholesaleUse:
+    answer: Retail
+    profile: NA
+  UsesDockerImages:
+    answer: false
+    profile: NA
+version: v1.0

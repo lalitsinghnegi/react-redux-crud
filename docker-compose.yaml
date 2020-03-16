@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/app
+    environment:
+      # these variables are set for internet access from within container
+      # these are being used by npm while downloading on upgrading the packages
+      - http_proxy=$DOCKER_LOCAL_PROXY
+      - https_proxy=$DOCKER_LOCAL_PROXY
+      - HTTP_PROXY=$DOCKER_LOCAL_PROXY
+      - HTTPS_PROXY=$DOCKER_LOCAL_PROXY
+      - REACT_APP_NODE_ENV=development
+      - REACT_APP_API_URL=https://query-bill-api.apps.np.sdppcf.com/
+      - REACT_APP_BASE_URL=http://localhost:3000/
+      - REACT_APP_ROWPERPAGE=10

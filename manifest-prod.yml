@@ -1,0 +1,11 @@
+---
+applications:
+  - name: query-bill-ui-prod
+    memory: 512M
+    instances: 1
+    buildpacks:
+      - https://github.com/cloudfoundry/staticfile-buildpack
+    env:
+      REACT_APP_API_URL: BMB_API_URL
+      REACT_APP_BASE_URL: BMB_BASE_URL
+      REACT_APP_ROWPERPAGE: BMB_ROWPERPAGE

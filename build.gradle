@@ -1,0 +1,61 @@
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
+
+apply plugin: 'com.moowork.node'
+
+group = 'com.telstra.querybill'
+version = '1.0.0-SNAPSHOT'
+
+node {
+    version = '10.15.3'
+    yarnVersion = '1.16.0'
+
+    download = true
+
+    workDir = file("${project.projectDir}/toolBox/nodejs")
+    yarnWorkDir = file("${project.projectDir}/toolBox/yarn")
+    nodeModulesDir = file("${project.projectDir}")
+}
+
+task build(type: YarnTask) {
+    dependsOn 'installDependencies'
+    def envMode = 'dev'
+    inputs.files(fileTree('node_modules'))
+    inputs.files(fileTree('src'))
+
+    outputs.dir('dist')
+
+    if ( project.hasProperty("envmode")) {
+            envMode = envmode
+    }
+
+    print 'Running Environment: '
+    println envMode
+    args = ['run', envMode]
+}
+
+task installDependencies(type: YarnTask) {
+
+    inputs.files(fileTree('node_modules'))
+    inputs.file('package.json')
+    inputs.file('yarn.lock')
+    outputs.dir('node_modules')
+
+    args = ['install']
+}
+
+task clean(type: Delete) {
+    delete 'node_modules'
+    delete 'dist'
+    delete 'toolBox'
+}
